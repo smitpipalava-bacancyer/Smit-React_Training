@@ -1,0 +1,60 @@
+there will be one useFetch custom hook that will take the URL and then make the fetch request and return the data ... 
+
+what are the functionalities are there?
+
+1. when page loads then all the products should be on the page with default pagination value :- https://dummyjson.com/products?limit=10&skip=0;
+
+2. when the user search something in the input field then it should hit this url :-
+https://dummyjson.com/products/search?q=${finalValue}
+ 
+NOTE :- in this what we have to do that there will be data of searched data and pagination should be there for that current data.
+
+3. when the user click on the sort by price | rating and order asc | desc then this URL should hit : https://dummyjson.com/products?limit=10&skip=0&sortBy=price&order=desc
+
+
+4. and when the user remove the string then the initial url should hit :- https://dummyjson.com/products?limit=10&skip=10;
+
+
+so base URL :- https://dummyjson.com/products?limit=10&skip=0
+
+when 2 hit url https://dummyjson.com/products/search?q=${finalValue}?limit=10&skip=0
+when 3 hit url https://dummyjson.com/products?limit=10&skip=0&sortBy=price&order=desc
+
+just khali aapne search thay tyare aapne search value aapne limit pehla mukvanu che baki pagination hamesa pachal j rehse and jyare sort and order thase tyare b te pachal thi j append thase..
+
+have aapne jyare URL change thay tyare aapne useFetch ne call karvano thase mate aapne useEffect ma aapne kam karvu padse.. pan aapne ek hook ni andar bija hook ne call na kari sakie.. have aane aapne kai rite overcome karvu??
+
+to aapne react ni andar ek rule che ke aapne game tyare component no state variable change thase etle aakhu component re-render thase...
+
+to aapne evu kaik kari sakie ...
+
+suppose aapne ek state variable lai lidho URL kari ne je thi kari ne User game tyare 1 to 4 ma hit karse tyare URL change thavani che and e change thase etle su thase ke useFetch hit thase and data navo aavse have ena par paginataion chalse...
+
+Date :- 24/03/2026 Time :- 1:51 p.m.
+now there is one problem that we create the component for the navbar and whenever the user type something in the input type then it's value will be only in the navbar we can't access it in the Home.jsx so how to do it ?? just leave it first solve the pagination because it is in the Home.jsx ....
+
+
+time : 02:09 p.m.
+have aapne aane thodu modify karie karnke child to parent ni andar data mokalvo ena karta aapne ek global state banai daie jema aapne value ma finalValue rakhisu etle ke aapne ek context banayo ane teni andar aapne finalValue change thase etle eni under ma aavta badha j component ne e notify karse. so aapne Home.jsx ni andar aapne aa variable ne access karisu and jo aani value hase to aapne url ma change kari daisu..
+
+flow :- createContext => value:- input value , option value (order , sortBy);
+provider => Navbar , Home component
+Navbar ma jai ne input ma change thayo to te context ni andar value change karse. have jevi ahiya value change thai ke global state Home.jsx ne notify karse and jevu Home.jsx ne khabar padse ke Global state ma change thase ke te re-render thase and tya j aapne check kari laisu ke input ni value che ?? jo che to aapne  aa URL ne hit karisu : https://dummyjson.com/products/search?q=${finalValue}?limit=10&skip=0 jo global state ni andar sortBy && order banne ni value change thai che to aapne aa url ne hit karisu : https://dummyjson.com/products?limit=10&skip=0&sortBy=price&order=desc. and jo 3ey change thaya che to aapne aa URL ne hit karisu : https://dummyjson.com/products/search?q=apple&limit=10&skip=0&sortBy=rating&order=asc.
+
+
+// Program has been done of Saturday using Context API.
+
+
+
+Date : 24-03-2026 time : 03:51 p.m.
+
+now what we have to do ? we need to add one button which is Add to cart in the card of the object.. so when user click on add to cart then it should be added in the right side of the screen. and when the user click on the add to cart and when it was added to the right side of the screen then it's button will be disabled... so user can't add one more time...
+
+to aapne aa achieve karva mate pehla to aapne pehla ek global state ne levo padse teni andar aapne cartlist ni value ne add kari daisu..
+have jo aapne aa achieve karvu hoy to pehla kaya product ne aapne cart ma add karyu che e jovu pade eni mate aapne card ni andar key add kareli che but tene aapne access kai rite karvi??? chalo e to mali gayu ke aapne parent (renderData) props ma thi pass karisu and then aapne Card.jsx ma aapne ene log kari sakisu..
+
+have aapne su karvanu che ke aapne add to cart karie etle ek array ni andar aavi javo joie and then te card mate nu button disable thai javu joie to teni mate aapne pehla ek global state variable banai laie have teni initial value array hase. have aapne add to cart karyu etle pehla aapne id laisu and then teni same aapne je props parent ma hato ene aapne te global array ni andar add kari daisu... like that [{},{},{}]
+
+teni mate aapne ek array no state banaivisu and teni method and e data ne aapne return karai daisu... now it has been done
+
+have just aapne ek nanu kam rahyu che ke aapne side ma batavanu che teni mate aapne flex no use karvo padse... main page(HomePage) ni andar j 
