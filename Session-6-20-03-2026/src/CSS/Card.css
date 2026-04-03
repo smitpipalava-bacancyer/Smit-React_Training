@@ -1,0 +1,8 @@
+.Card{
+    height : 350px ; 
+    width : 250px ; 
+    background-color : white ; 
+    color : black ; 
+    box-shadow: 2px 2px 4px black ; 
+    text-align : center
+}
