@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.PaginationDiv{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    padding: 8px;
+    border-radius: 30px;
+}
+
+.SortingDiv{
+    display: flex ;
+    gap: 5px;
+}
+.AddUserDiv{
+    border: 1px solid red;
+    padding: 5px;
+}
+.AddUserDiv form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.AddUserDiv form button{
+    display: block;
+    width: max-content;
+
+}
