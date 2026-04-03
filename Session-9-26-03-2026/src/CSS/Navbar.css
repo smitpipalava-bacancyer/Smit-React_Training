@@ -1,0 +1,10 @@
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center
+}
+
+.SortingDiv{
+    display: flex ;
+    gap: 5px;
+}

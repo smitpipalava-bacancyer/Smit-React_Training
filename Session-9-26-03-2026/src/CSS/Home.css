@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+}
+
+.mainItems {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.cartItems {
+    flex: 1;
+}
+
+
+.PaginationDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px
+}
